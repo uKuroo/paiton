@@ -8,7 +8,6 @@ pasta = Path(Config.OBSERVED_FOLDER)
 if(pasta.exists()):
 
     while(True):
-        print("Executou")
 
         arquivos = [arquivo for arquivo in pasta.iterdir() if arquivo.is_file()]
 
@@ -34,6 +33,13 @@ if(pasta.exists()):
 
                 pastaFinal = Path(pastaDestino)
                 shutil.move(arquivo, pastaFinal)
+                
+                message = f'Arquivo {arquivo.name} movido para {pastaFinal}'
+                print(message)
+                
+                message = f'[{time.strftime("%d/%m/%Y %H:%M:%S")}]: ' + message
+                with open("file_history.log", "a") as log_file:
+                    log_file.write(message + "\n")
 
         time.sleep(5)
 else:
