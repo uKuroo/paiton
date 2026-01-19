@@ -1,5 +1,5 @@
-OBSERVED_FOLDER = "/home/gsantos/Downloads/paiton/"
-BASE_EXTENSION_FOLDER = "/home/gsantos/Arquivos/"
+OBSERVED_FOLDER = "/home/john/Downloads/paiton/"
+BASE_EXTENSION_FOLDER = "/home/john/Downloads/Arquivos/"
 
 PREFIX_FOLDERS = {
     "INF": "Informatica/",
@@ -8,7 +8,10 @@ PREFIX_FOLDERS = {
 
 EXTENSIONS_FOLDERS = {
     ".jpg": "Imagem/",
+    ".jpeg": "Imagem/",
     ".png": "Imagem/",
+    ".pdf": "Documento/",
+    ".doc": "Documento/",
     ".gif": "GIF/",
     ".mp4": "Video/",
     ".mkv": "Video/",

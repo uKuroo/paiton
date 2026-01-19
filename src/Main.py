@@ -1,5 +1,6 @@
 import time
 from pathlib import Path
+import shutil
 
 import Config
 
@@ -23,14 +24,16 @@ if(pasta.exists()):
             else:
                 pastaDestino += "Outros/"
 
-            pastaDestino += Config.EXTENSIONS_FOLDERS[arquivo.suffix]
+            sufix = Config.EXTENSIONS_FOLDERS.get(arquivo.suffix)
+            if( sufix != None):
+                pastaDestino += sufix
             
-            Path(pastaDestino).mkdir(parents=True, exist_ok=True)
+                Path(pastaDestino).mkdir(parents=True, exist_ok=True)
 
-            pastaDestino += nomeArquivo
+                pastaDestino += nomeArquivo
 
-            pastaFinal = Path(pastaDestino)
-            arquivo.move(pastaFinal)
+                pastaFinal = Path(pastaDestino)
+                shutil.move(arquivo, pastaFinal)
 
         time.sleep(5)
 else:
