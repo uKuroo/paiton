@@ -1,10 +1,13 @@
 import json
 
 import config.data as data
+import os
+
+HOME_DIR = os.path.expanduser("~")
 
 BASE_CONFIG = {
-  "OBSERVED_FOLDER": "/home/john/Downloads/paiton/",
-  "BASE_EXTENSION_FOLDER": "/home/john/Downloads/Arquivos/",
+  "OBSERVED_FOLDER": f'{HOME_DIR}/Downloads/',
+  "BASE_EXTENSION_FOLDER": f'{HOME_DIR}/Downloads/Arquivos/',
   "PREFIX_FOLDERS": {
     "INF": "Informatica/",
     "PRJ": "Projeto/"
@@ -28,7 +31,6 @@ def initial_config():
   with open('src/config/config.json', 'w', encoding='utf-8') as f:
     print("Criando arquivo de configuração padrão em 'src/config/config.json'")
     json.dump(BASE_CONFIG, f, ensure_ascii=False, indent=2)
-
 
 def load_config():
   with open('src/config/config.json', 'r', encoding='utf-8') as f:
