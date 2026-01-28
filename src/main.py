@@ -6,15 +6,16 @@ import config.setup as setup
 import config.data as data
 
 def main():
-  config_file = Path('src/config/config.json')
-  if not config_file.exists():
-    setup.initial_config()
+  try:
+    config_file = Path('src/config/config.json')
+    if not config_file.exists():
+      setup.initial_config()
 
-  if(setup.load_config()):
-    run_file_organizer()
+    if(setup.load_config()):
+      run_file_organizer()
+  except (KeyboardInterrupt):
+    print("Programa encerrado pelo usuário...")
     
-    
-
 def run_file_organizer():
   print("Iniciando organizador de arquivos...")
   directory = Path(data.OBSERVED_FOLDER)
