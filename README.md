@@ -4,6 +4,8 @@
 
 Uma aplicação de monitoramento de arquivos que observa uma pasta específica buscando novos arquivos e os organiza em pastas designadas com base em seus prefixos e extensões. A aplicação foi projetada para automatizar o processo de gerenciamento de arquivos, facilitando a organização.
 
+![Fluxo da Aplicação](./fluxo.svg)
+
 ## Estrutura do Projeto
 
 ```plaintext
