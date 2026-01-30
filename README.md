@@ -1,57 +1,57 @@
-# File Organizer Project
+# Projeto File-Organizer - Organizador de Arquivos
 
-## Overview
+## Visão Geral
 
-A file monitoring application that observes a specified folder for new files and organizes them into designated folders based on their prefixes and extensions. The application is designed to automate the process of file management, making it easier to keep track of files.
+Uma aplicação de monitoramento de arquivos que observa uma pasta específica buscando novos arquivos e os organiza em pastas designadas com base em seus prefixos e extensões. A aplicação foi projetada para automatizar o processo de gerenciamento de arquivos, facilitando a organização.
 
-## Project Structure
+## Estrutura do Projeto
 
-``` plaintext
-paiton
+```plaintext
+File-Organizer
 ├── src
-│   ├── main.py          # Main application logic
+│   ├── main.py          # Lógica principal da aplicação
 │   ├── config/
-│   │   ├── config.json  # Configuration file (auto-generated)
-│   │   ├── data.py      # Configuration data structures
-│   │   └── setup.py     # Configuration management and validation
-│   └── log/             # Application logs
-└── README.md            # Project documentation
+│   │   ├── config.json  # Arquivo de configuração (gerado automaticamente)
+│   │   ├── data.py      # Estruturas de dados de configuração
+│   │   └── setup.py     # Gerenciamento e validação de configuração
+│   └── log/             # Logs da aplicação
+└── README.md            # Documentação do projeto
 ```
 
-## Installation
+## Instalação
 
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Run the application:
+1. Clone o repositório para sua máquina local.
+2. Navegue até o diretório do projeto.
+3. Execute a aplicação:
 
-   ``` bash
+   ```bash
    python src/main.py
-   or
+   ou
    python3 src/main.py
    ```
 
-## Configuration
+## Configuração
 
-The application uses a JSON configuration file located at `src/config/config.json`.
+A aplicação utiliza um arquivo de configuração JSON localizado em `src/config/config.json`.
 
-On the first run, if the configuration file is missing, the application will automatically create a default one with sample paths. You should edit `src/config/config.json` to set your desired:
+Na primeira execução, se o arquivo de configuração estiver ausente, a aplicação criará automaticamente um padrão com caminhos de exemplo. Você deve editar `src/config/config.json` para definir suas preferências:
 
-- **OBSERVED_FOLDER**: The directory to monitor for new files.
-- **BASE_EXTENSION_FOLDER**: The root directory where organized files will be moved.
-- **PREFIX_FOLDERS**: Rules for organizing files by name prefix
-  - (the prefix will be separated by an underscore, ex: `PREFIX_FOLDERS = {"INF": "Informatica/"}` will move files like `INF_123.pdf` to `Informatica/123.pdf`).
-- **EXTENSIONS_FOLDERS**: Rules for organizing files by extension.
+- **OBSERVED_FOLDER**: O diretório a ser monitorado para novos arquivos.
+- **BASE_EXTENSION_FOLDER**: O diretório raiz para onde os arquivos organizados serão movidos.
+- **PREFIX_FOLDERS**: Regras para organizar arquivos por prefixo de nome
+  - (o prefixo será separado por um sublinhado, ex: `PREFIX_FOLDERS = {"INF": "Informatica/"}` moverá arquivos como `INF_123.pdf` para `Informatica/123.pdf`).
+- **EXTENSIONS_FOLDERS**: Regras para organizar arquivos por extensão.
 
-The application validates the configuration structure on startup. If required fields are missing, it will ask if you want to reset to defaults or edit manually.
+A aplicação valida a estrutura da configuração na inicialização. Se campos obrigatórios estiverem ausentes, ela perguntará se você deseja redefinir para os padrões ou editar manualmente.
 
-## Usage
+## Uso
 
-To start monitoring the specified folder, run the `main.py` script:
+Para iniciar o monitoramento da pasta especificada, execute o script `main.py`:
 
-``` bash
+```bash
 python src/main.py
-or
+ou
 python3 src/main.py
 ```
 
-The application will continuously check for new files in the observable folder and move them to the appropriate destination based on their prefixes and extensions.
+A aplicação verificará continuamente novos arquivos na pasta observada e os moverá para o destino apropriado com base em seus prefixos e extensões.
